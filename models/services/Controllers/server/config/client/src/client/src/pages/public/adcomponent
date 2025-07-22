@@ -1,0 +1,24 @@
+import React, { useEffect } from 'react';
+
+const AdComponent = ({ slotId, format = "auto", responsive = true }) => {
+  useEffect(() => {
+    if (window.adsbygoogle) {
+      window.adsbygoogle.push({});
+    }
+  }, []);
+
+  return (
+    <div className="ad-container">
+      <ins 
+        className="adsbygoogle"
+        style={{ display: 'block' }}
+        data-ad-client="ca-pub-5884815764517957"
+        data-ad-slot={slotId}
+        data-ad-format={format}
+        data-full-width-responsive={responsive.toString()}
+      ></ins>
+    </div>
+  );
+};
+
+export default AdComponent;
