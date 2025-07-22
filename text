@@ -1,0 +1,25 @@
+backend/
+├── config/
+│   ├── db.js
+│   └── auth.js
+├── controllers/
+│   ├── authController.js
+│   ├── doctorController.js
+│   ├── appointmentController.js
+│   └── paymentController.js
+├── models/
+│   ├── User.js
+│   ├── Doctor.js
+│   ├── Appointment.js
+│   └── Transaction.js
+├── routes/
+│   ├── authRoutes.js
+│   ├── doctorRoutes.js
+│   ├── appointmentRoutes.js
+│   └── paymentRoutes.js
+├── services/
+│   ├── emailService.js
+│   ├── paymentService.js
+│   └── calendarService.js
+├── app.js
+└── server.js
