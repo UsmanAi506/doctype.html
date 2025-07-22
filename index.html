@@ -3,8 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HealthHub - Your Complete Wellness Guide</title>
-    <meta name="description" content="Comprehensive health information on mental wellbeing, fitness, diabetes, cancer, and 500+ medical conditions with expert advice and treatment options">
+    <title>GlobalHealth Connect | Online Doctor Appointments & Wellness Services</title>
+    <meta name="description" content="Book online appointments with expert doctors in USA, UK, Canada, Australia, and Pakistan. Comprehensive health services for mental, physical, and chronic conditions.">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="online doctor, telemedicine, health consultation, mental health, diabetes care, cancer specialist, fitness expert">
+    <meta name="author" content="GlobalHealth Connect">
+    <meta property="og:title" content="GlobalHealth Connect | Online Doctor Appointments">
+    <meta property="og:description" content="Book appointments with certified doctors worldwide for all your health needs">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.globalhealthconnect.com">
+    <meta property="og:image" content="https://www.globalhealthconnect.com/images/og-image.jpg">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -12,16 +21,20 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
     <style>
         :root {
-            --primary: #4CAF50;
-            --primary-dark: #388E3C;
-            --secondary: #2196F3;
-            --accent: #FF9800;
+            --primary: #2E7D32;
+            --primary-dark: #1B5E20;
+            --secondary: #0277BD;
+            --accent: #FF8F00;
             --light: #f8f9fa;
             --dark: #212529;
             --gray: #6c757d;
             --danger: #e53935;
+            --success: #43A047;
         }
         
         * {
@@ -58,6 +71,49 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #01579B;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        .btn-accent:hover {
+            background-color: #E65100;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         
         /* Header Styles */
@@ -127,6 +183,15 @@
             width: 100%;
         }
         
+        .user-actions {
+            display: flex;
+            align-items: center;
+        }
+        
+        .user-actions a {
+            margin-left: 15px;
+        }
+        
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -138,11 +203,11 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(76, 175, 80, 0.9), rgba(33, 150, 243, 0.9)), url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(135deg, rgba(46, 125, 50, 0.9), rgba(2, 119, 189, 0.9)), url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 80px 0;
+            padding: 100px 0;
             text-align: center;
         }
         
@@ -158,41 +223,16 @@
             margin: 0 auto 30px;
         }
         
-        .search-box {
-            max-width: 600px;
-            margin: 0 auto;
-            position: relative;
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
         }
         
-        .search-box input {
-            width: 100%;
-            padding: 15px 20px;
-            border-radius: 50px;
-            border: none;
-            font-size: 1rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        
-        .search-box button {
-            position: absolute;
-            right: 5px;
-            top: 5px;
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .search-box button:hover {
-            background-color: var(--primary-dark);
-        }
-        
-        /* Categories Section */
-        .categories {
-            padding: 60px 0;
+        /* Services Section */
+        .services {
+            padding: 80px 0;
         }
         
         .section-title {
@@ -218,13 +258,13 @@
             background-color: var(--primary);
         }
         
-        .categories-grid {
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
         }
         
-        .category-card {
+        .service-card {
             background-color: white;
             border-radius: 10px;
             overflow: hidden;
@@ -232,153 +272,360 @@
             transition: all 0.3s ease;
         }
         
-        .category-card:hover {
+        .service-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
         
-        .category-img {
-            height: 150px;
+        .service-img {
+            height: 200px;
             overflow: hidden;
         }
         
-        .category-img img {
+        .service-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
         
-        .category-card:hover .category-img img {
+        .service-card:hover .service-img img {
             transform: scale(1.1);
         }
         
-        .category-content {
-            padding: 20px;
+        .service-content {
+            padding: 25px;
         }
         
-        .category-content h3 {
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-        
-        .category-content p {
-            color: var(--gray);
-            font-size: 0.9rem;
+        .service-content h3 {
             margin-bottom: 15px;
+            font-size: 1.3rem;
         }
         
-        .category-content a {
-            display: inline-block;
+        .service-content p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        .service-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .service-price {
+            font-weight: 700;
             color: var(--primary);
-            font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 1.1rem;
         }
         
-        /* Featured Articles */
-        .featured {
-            padding: 60px 0;
+        /* Doctors Section */
+        .doctors {
+            padding: 80px 0;
             background-color: #f9f9f9;
         }
         
-        .articles-grid {
+        .doctors-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .filter-btn {
+            padding: 8px 15px;
+            border-radius: 5px;
+            background-color: white;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .doctors-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 30px;
         }
         
-        .article-card {
+        .doctor-card {
             background-color: white;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
         }
         
-        .article-img {
-            height: 200px;
+        .doctor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .doctor-img {
+            height: 250px;
             overflow: hidden;
         }
         
-        .article-img img {
+        .doctor-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
         
-        .article-content {
+        .doctor-content {
             padding: 20px;
+            text-align: center;
         }
         
-        .article-meta {
+        .doctor-content h3 {
+            margin-bottom: 5px;
+        }
+        
+        .doctor-specialty {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .doctor-rating {
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        .doctor-country {
+            display: inline-block;
+            background-color: #f0f0f0;
+            padding: 3px 10px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Appointment Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 50px auto;
+            max-width: 800px;
+            width: 90%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+            animation: modalFadeIn 0.3s ease;
+        }
+        
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .modal-header {
+            padding: 20px;
+            background-color: var(--primary);
+            color: white;
             display: flex;
             justify-content: space-between;
-            margin-bottom: 10px;
-            font-size: 0.8rem;
-            color: var(--gray);
+            align-items: center;
         }
         
-        .article-content h3 {
-            margin-bottom: 15px;
-            font-size: 1.3rem;
+        .modal-header h3 {
+            margin: 0;
+            color: white;
         }
         
-        .article-content p {
-            margin-bottom: 15px;
-            color: var(--gray);
+        .close-modal {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
         }
         
-        .read-more {
-            display: inline-block;
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-        
-        /* Health Tools */
-        .health-tools {
-            padding: 60px 0;
-        }
-        
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 25px;
-        }
-        
-        .tool-card {
-            background-color: white;
-            border-radius: 10px;
+        .modal-body {
             padding: 30px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
             transition: all 0.3s ease;
         }
         
-        .tool-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
         }
         
-        .tool-icon {
-            width: 70px;
-            height: 70px;
-            background-color: rgba(76, 175, 80, 0.1);
-            border-radius: 50%;
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .payment-methods {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .payment-method {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .payment-method input {
+            display: none;
+        }
+        
+        .payment-method label {
+            display: block;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .payment-method input:checked + label {
+            border-color: var(--primary);
+            background-color: rgba(46, 125, 50, 0.1);
+        }
+        
+        .payment-method i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+            color: var(--gray);
+        }
+        
+        .payment-method input:checked + label i {
+            color: var(--primary);
+        }
+        
+        .modal-footer {
+            padding: 20px;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .testimonial-text:before {
+            content: '"';
+            font-size: 4rem;
+            color: rgba(46, 125, 50, 0.1);
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            line-height: 1;
+        }
+        
+        .testimonial-author {
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: var(--primary);
-            font-size: 1.8rem;
         }
         
-        .tool-card h3 {
-            margin-bottom: 15px;
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Ad Spaces */
+        .ad-space {
+            background-color: #f1f1f1;
+            padding: 20px;
+            text-align: center;
+            margin: 40px 0;
+            border-radius: 5px;
+        }
+        
+        .ad-space p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
         }
         
         /* Newsletter */
         .newsletter {
-            padding: 60px 0;
+            padding: 80px 0;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             text-align: center;
@@ -419,35 +666,20 @@
         }
         
         .newsletter-form button:hover {
-            background-color: #f57c00;
-        }
-        
-        /* Ad Spaces */
-        .ad-space {
-            background-color: #f1f1f1;
-            padding: 20px;
-            text-align: center;
-            margin: 30px 0;
-            border-radius: 5px;
-        }
-        
-        .ad-space p {
-            color: var(--gray);
-            font-size: 0.9rem;
-            margin-bottom: 10px;
+            background-color: #E65100;
         }
         
         /* Footer */
         footer {
             background-color: var(--dark);
             color: white;
-            padding: 60px 0 20px;
+            padding: 80px 0 20px;
         }
         
         .footer-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
+            gap: 40px;
             margin-bottom: 40px;
         }
         
@@ -485,6 +717,22 @@
         .footer-col ul li a:hover {
             color: white;
             padding-left: 5px;
+        }
+        
+        .contact-info {
+            margin-bottom: 20px;
+        }
+        
+        .contact-info p {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            color: #b1b1b1;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--primary);
         }
         
         .social-links {
@@ -534,6 +782,7 @@
                 box-shadow: 0 5px 10px rgba(0,0,0,0.1);
                 transition: all 0.3s ease;
                 z-index: 999;
+                padding: 30px;
             }
             
             nav.active {
@@ -542,11 +791,15 @@
             
             nav ul {
                 flex-direction: column;
-                padding: 20px;
             }
             
             nav ul li {
-                margin: 10px 0;
+                margin: 15px 0;
+            }
+            
+            .user-actions {
+                margin-left: auto;
+                margin-right: 20px;
             }
             
             .mobile-menu-btn {
@@ -555,6 +808,26 @@
             
             .hero h2 {
                 font-size: 2rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-btns .btn {
+                width: 100%;
+                max-width: 300px;
+                margin-bottom: 10px;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .payment-methods {
+                flex-direction: column;
             }
             
             .newsletter-form {
@@ -574,7 +847,7 @@
         
         @media (max-width: 768px) {
             .hero {
-                padding: 60px 0;
+                padding: 80px 0;
             }
             
             .hero h2 {
@@ -584,6 +857,11 @@
             .section-title h2 {
                 font-size: 1.5rem;
             }
+            
+            .modal-content {
+                width: 95%;
+                margin: 20px auto;
+            }
         }
     </style>
 </head>
@@ -592,20 +870,25 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-                <img src="https://via.placeholder.com/40x40" alt="HealthHub Logo">
-                <h1>Health<span>Hub</span></h1>
+                <img src="images/logo.png" alt="GlobalHealth Connect Logo">
+                <h1>GlobalHealth <span>Connect</span></h1>
             </div>
             
             <nav id="main-nav">
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Conditions</a></li>
-                    <li><a href="#">Mental Health</a></li>
-                    <li><a href="#">Fitness</a></li>
-                    <li><a href="#">Nutrition</a></li>
-                    <li><a href="#">Experts</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#doctors">Doctors</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#">Health Library</a></li>
+                    <li><a href="#">About Us</a></li>
                 </ul>
             </nav>
+            
+            <div class="user-actions">
+                <a href="#" class="btn btn-secondary">Login</a>
+                <a href="#" class="btn btn-primary">Sign Up</a>
+            </div>
             
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
@@ -616,12 +899,12 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h2>Your Trusted Health & Wellness Companion</h2>
-            <p>Get expert advice, treatment options, and wellness tips for 500+ medical conditions including diabetes, cancer, mental health issues and more.</p>
+            <h2>Expert Healthcare From The Comfort Of Your Home</h2>
+            <p>Connect with certified doctors across USA, UK, Canada, Australia, and Pakistan for online consultations, prescriptions, and health advice.</p>
             
-            <div class="search-box">
-                <input type="text" placeholder="Search conditions, symptoms, treatments...">
-                <button><i class="fas fa-search"></i> Search</button>
+            <div class="hero-btns">
+                <a href="#doctors" class="btn btn-accent">Find a Doctor</a>
+                <a href="#services" class="btn btn-secondary">View Services</a>
             </div>
         </div>
     </section>
@@ -631,126 +914,263 @@
         <div class="ad-space">
             <p>Advertisement</p>
             <!-- AdSense Code Here -->
-            <div style="height: 90px; background-color: #e9e9e9; display: flex; align-items: center; justify-content: center;">
-                <p>Google AdSense Banner (728x90)</p>
-            </div>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"></script>
+            <!-- HealthHub Top Banner -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="XXXXXXXXXX"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
         </div>
     </div>
     
-    <!-- Categories Section -->
-    <section class="categories">
+    <!-- Services Section -->
+    <section class="services" id="services">
         <div class="container">
             <div class="section-title">
-                <h2>Health Categories</h2>
-                <p>Explore comprehensive health information by category</p>
+                <h2>Our Services</h2>
+                <p>Comprehensive healthcare solutions tailored to your needs</p>
             </div>
             
-            <div class="categories-grid">
-                <!-- Category 1 -->
-                <div class="category-card">
-                    <div class="category-img">
-                        <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Mental Health">
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="General Consultation">
                     </div>
-                    <div class="category-content">
+                    <div class="service-content">
+                        <h3>General Consultation</h3>
+                        <p>Comprehensive health assessment and treatment for common illnesses and chronic conditions.</p>
+                        <div class="service-meta">
+                            <span class="service-price">$49 - $99</span>
+                            <a href="#" class="btn btn-primary book-btn" data-service="General Consultation">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1592611690036-a941a4f92a51?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Mental Health">
+                    </div>
+                    <div class="service-content">
                         <h3>Mental Health</h3>
-                        <p>Anxiety, depression, stress management and psychological wellbeing</p>
-                        <a href="#">Explore <i class="fas fa-arrow-right"></i></a>
+                        <p>Specialized care for anxiety, depression, stress and other psychological conditions.</p>
+                        <div class="service-meta">
+                            <span class="service-price">$79 - $149</span>
+                            <a href="#" class="btn btn-primary book-btn" data-service="Mental Health">Book Now</a>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Category 2 -->
-                <div class="category-card">
-                    <div class="category-img">
-                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Fitness">
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Diabetes Care">
                     </div>
-                    <div class="category-content">
-                        <h3>Fitness & Exercise</h3>
-                        <p>Workout plans, muscle building, weight loss and physical therapy</p>
-                        <a href="#">Explore <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                
-                <!-- Category 3 -->
-                <div class="category-card">
-                    <div class="category-img">
-                        <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Diabetes">
-                    </div>
-                    <div class="category-content">
+                    <div class="service-content">
                         <h3>Diabetes Care</h3>
-                        <p>Type 1 & 2 diabetes management, diet plans and prevention</p>
-                        <a href="#">Explore <i class="fas fa-arrow-right"></i></a>
+                        <p>Personalized management plans for Type 1 and Type 2 diabetes patients.</p>
+                        <div class="service-meta">
+                            <span class="service-price">$89 - $159</span>
+                            <a href="#" class="btn btn-primary book-btn" data-service="Diabetes Care">Book Now</a>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Category 4 -->
-                <div class="category-card">
-                    <div class="category-img">
-                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Cancer">
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Fitness Coaching">
                     </div>
-                    <div class="category-content">
-                        <h3>Cancer Resources</h3>
-                        <p>Information on various cancers, treatments and support resources</p>
-                        <a href="#">Explore <i class="fas fa-arrow-right"></i></a>
+                    <div class="service-content">
+                        <h3>Fitness Coaching</h3>
+                        <p>Custom workout and nutrition plans from certified fitness experts.</p>
+                        <div class="service-meta">
+                            <span class="service-price">$59 - $129</span>
+                            <a href="#" class="btn btn-primary book-btn" data-service="Fitness Coaching">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Cancer Support">
+                    </div>
+                    <div class="service-content">
+                        <h3>Cancer Support</h3>
+                        <p>Specialist consultations for cancer patients and survivors.</p>
+                        <div class="service-meta">
+                            <span class="service-price">$99 - $199</span>
+                            <a href="#" class="btn btn-primary book-btn" data-service="Cancer Support">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Pediatric Care">
+                    </div>
+                    <div class="service-content">
+                        <h3>Pediatric Care</h3>
+                        <p>Specialized healthcare services for infants, children and adolescents.</p>
+                        <div class="service-meta">
+                            <span class="service-price">$69 - $139</span>
+                            <a href="#" class="btn btn-primary book-btn" data-service="Pediatric Care">Book Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Featured Articles -->
-    <section class="featured">
+    <!-- Doctors Section -->
+    <section class="doctors" id="doctors">
         <div class="container">
             <div class="section-title">
-                <h2>Featured Articles</h2>
-                <p>Latest health news and expert advice</p>
+                <h2>Our Expert Doctors</h2>
+                <p>Certified healthcare professionals from around the world</p>
             </div>
             
-            <div class="articles-grid">
-                <!-- Article 1 -->
-                <div class="article-card">
-                    <div class="article-img">
-                        <img src="https://images.unsplash.com/photo-1592611690036-a941a4f92a51?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Managing Anxiety">
+            <div class="doctors-filter">
+                <button class="filter-btn active" data-country="all">All Countries</button>
+                <button class="filter-btn" data-country="usa">USA</button>
+                <button class="filter-btn" data-country="uk">UK</button>
+                <button class="filter-btn" data-country="canada">Canada</button>
+                <button class="filter-btn" data-country="australia">Australia</button>
+                <button class="filter-btn" data-country="pakistan">Pakistan</button>
+            </div>
+            
+            <div class="doctors-grid">
+                <!-- Doctor 1 -->
+                <div class="doctor-card" data-country="usa" data-specialty="Cardiology">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Dr. Sarah Johnson">
                     </div>
-                    <div class="article-content">
-                        <div class="article-meta">
-                            <span><i class="far fa-calendar"></i> June 15, 2023</span>
-                            <span><i class="far fa-user"></i> Dr. Sarah Johnson</span>
+                    <div class="doctor-content">
+                        <h3>Dr. Sarah Johnson</h3>
+                        <span class="doctor-specialty">Cardiologist</span>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7 (128)</span>
                         </div>
-                        <h3>10 Proven Techniques to Manage Anxiety Naturally</h3>
-                        <p>Discover effective, drug-free methods to reduce anxiety and improve your mental wellbeing with these expert-approved techniques.</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <span class="doctor-country">USA</span>
+                        <a href="#" class="btn btn-primary book-btn" data-doctor="Dr. Sarah Johnson">Book Appointment</a>
                     </div>
                 </div>
                 
-                <!-- Article 2 -->
-                <div class="article-card">
-                    <div class="article-img">
-                        <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Diabetes Diet">
+                <!-- Doctor 2 -->
+                <div class="doctor-card" data-country="uk" data-specialty="Psychiatry">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Dr. Michael Brown">
                     </div>
-                    <div class="article-content">
-                        <div class="article-meta">
-                            <span><i class="far fa-calendar"></i> June 10, 2023</span>
-                            <span><i class="far fa-user"></i> Dr. Michael Chen</span>
+                    <div class="doctor-content">
+                        <h3>Dr. Michael Brown</h3>
+                        <span class="doctor-specialty">Psychiatrist</span>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>5.0 (89)</span>
                         </div>
-                        <h3>The Ultimate Diabetes-Friendly Diet Plan</h3>
-                        <p>Learn how to balance your blood sugar with this comprehensive meal plan designed specifically for diabetics.</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <span class="doctor-country">UK</span>
+                        <a href="#" class="btn btn-primary book-btn" data-doctor="Dr. Michael Brown">Book Appointment</a>
                     </div>
                 </div>
                 
-                <!-- Article 3 -->
-                <div class="article-card">
-                    <div class="article-img">
-                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Home Workouts">
+                <!-- Doctor 3 -->
+                <div class="doctor-card" data-country="canada" data-specialty="Endocrinology">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Dr. Emily Chen">
                     </div>
-                    <div class="article-content">
-                        <div class="article-meta">
-                            <span><i class="far fa-calendar"></i> June 5, 2023</span>
-                            <span><i class="far fa-user"></i> Trainer Mark Wilson</span>
+                    <div class="doctor-content">
+                        <h3>Dr. Emily Chen</h3>
+                        <span class="doctor-specialty">Endocrinologist</span>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>4.2 (76)</span>
                         </div>
-                        <h3>20-Minute Home Workouts for Maximum Results</h3>
-                        <p>No gym? No problem! These efficient home workouts will help you stay fit with minimal equipment.</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <span class="doctor-country">Canada</span>
+                        <a href="#" class="btn btn-primary book-btn" data-doctor="Dr. Emily Chen">Book Appointment</a>
+                    </div>
+                </div>
+                
+                <!-- Doctor 4 -->
+                <div class="doctor-card" data-country="australia" data-specialty="Oncology">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Dr. David Wilson">
+                    </div>
+                    <div class="doctor-content">
+                        <h3>Dr. David Wilson</h3>
+                        <span class="doctor-specialty">Oncologist</span>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.6 (112)</span>
+                        </div>
+                        <span class="doctor-country">Australia</span>
+                        <a href="#" class="btn btn-primary book-btn" data-doctor="Dr. David Wilson">Book Appointment</a>
+                    </div>
+                </div>
+                
+                <!-- Doctor 5 -->
+                <div class="doctor-card" data-country="pakistan" data-specialty="Pediatrics">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Dr. Ayesha Khan">
+                    </div>
+                    <div class="doctor-content">
+                        <h3>Dr. Ayesha Khan</h3>
+                        <span class="doctor-specialty">Pediatrician</span>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>4.0 (64)</span>
+                        </div>
+                        <span class="doctor-country">Pakistan</span>
+                        <a href="#" class="btn btn-primary book-btn" data-doctor="Dr. Ayesha Khan">Book Appointment</a>
+                    </div>
+                </div>
+                
+                <!-- Doctor 6 -->
+                <div class="doctor-card" data-country="usa" data-specialty="Nutrition">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Dr. Jennifer Lee">
+                    </div>
+                    <div class="doctor-content">
+                        <h3>Dr. Jennifer Lee</h3>
+                        <span class="doctor-specialty">Nutritionist</span>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>5.0 (93)</span>
+                        </div>
+                        <span class="doctor-country">USA</span>
+                        <a href="#" class="btn btn-primary book-btn" data-doctor="Dr. Jennifer Lee">Book Appointment</a>
                     </div>
                 </div>
             </div>
@@ -762,59 +1182,69 @@
         <div class="ad-space">
             <p>Advertisement</p>
             <!-- AdSense Code Here -->
-            <div style="height: 250px; background-color: #e9e9e9; display: flex; align-items: center; justify-content: center;">
-                <p>Google AdSense Rectangle (300x250)</p>
-            </div>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"></script>
+            <!-- HealthHub Mid Rectangle -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="XXXXXXXXXX"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
         </div>
     </div>
     
-    <!-- Health Tools -->
-    <section class="health-tools">
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="section-title">
-                <h2>Health Tools</h2>
-                <p>Interactive tools to help manage your health</p>
+                <h2>Patient Testimonials</h2>
+                <p>What our patients say about our services</p>
             </div>
             
-            <div class="tools-grid">
-                <!-- Tool 1 -->
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <i class="fas fa-heartbeat"></i>
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>I was able to consult with a top cardiologist from the US without leaving my home in London. The service was exceptional and the diagnosis was spot on.</p>
                     </div>
-                    <h3>BMI Calculator</h3>
-                    <p>Calculate your Body Mass Index and get personalized recommendations</p>
-                    <a href="#">Try Now</a>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Robert Johnson">
+                        <div class="author-info">
+                            <h4>Robert Johnson</h4>
+                            <p>London, UK</p>
+                        </div>
+                    </div>
                 </div>
                 
-                <!-- Tool 2 -->
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <i class="fas fa-burn"></i>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>As a busy professional, I don't have time for clinic visits. GlobalHealth Connect saved me hours of waiting time and provided excellent care for my diabetes management.</p>
                     </div>
-                    <h3>Calorie Counter</h3>
-                    <p>Track your daily calorie intake and expenditure</p>
-                    <a href="#">Try Now</a>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Miller">
+                        <div class="author-info">
+                            <h4>Sarah Miller</h4>
+                            <p>New York, USA</p>
+                        </div>
+                    </div>
                 </div>
                 
-                <!-- Tool 3 -->
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <i class="fas fa-pills"></i>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>The mental health support I received was life-changing. My therapist was compassionate, professional, and always available when I needed help the most.</p>
                     </div>
-                    <h3>Medication Reminder</h3>
-                    <p>Never miss a dose with our smart reminder system</p>
-                    <a href="#">Try Now</a>
-                </div>
-                
-                <!-- Tool 4 -->
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <i class="fas fa-stethoscope"></i>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="David Wilson">
+                        <div class="author-info">
+                            <h4>David Wilson</h4>
+                            <p>Sydney, Australia</p>
+                        </div>
                     </div>
-                    <h3>Symptom Checker</h3>
-                    <p>Understand what your symptoms might indicate</p>
-                    <a href="#">Try Now</a>
                 </div>
             </div>
         </div>
@@ -823,11 +1253,11 @@
     <!-- Newsletter -->
     <section class="newsletter">
         <div class="container">
-            <h2>Stay Updated With Health News</h2>
-            <p>Subscribe to our newsletter for the latest health tips, research updates, and expert advice delivered to your inbox weekly.</p>
+            <h2>Stay Updated With Health Tips</h2>
+            <p>Subscribe to our newsletter for the latest health news, expert advice, and special offers.</p>
             
-            <form class="newsletter-form">
-                <input type="email" placeholder="Enter your email address">
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" placeholder="Enter your email address" required>
                 <button type="submit">Subscribe</button>
             </form>
         </div>
@@ -839,12 +1269,13 @@
             <div class="footer-container">
                 <!-- Column 1 -->
                 <div class="footer-col">
-                    <h3>HealthHub</h3>
-                    <p>Your trusted source for comprehensive health information, expert advice, and wellness resources.</p>
+                    <h3>GlobalHealth Connect</h3>
+                    <p>Connecting patients with top healthcare professionals worldwide through innovative telemedicine solutions.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
@@ -854,43 +1285,180 @@
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="#">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#doctors">Doctors</a></li>
+                        <li><a href="#">Health Library</a></li>
                         <li><a href="#">About Us</a></li>
-                        <li><a href="#">Medical Experts</a></li>
-                        <li><a href="#">Health Tools</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
                 
                 <!-- Column 3 -->
                 <div class="footer-col">
-                    <h3>Health Topics</h3>
+                    <h3>Services</h3>
                     <ul>
+                        <li><a href="#">General Consultation</a></li>
                         <li><a href="#">Mental Health</a></li>
                         <li><a href="#">Chronic Conditions</a></li>
-                        <li><a href="#">Nutrition</a></li>
-                        <li><a href="#">Fitness</a></li>
-                        <li><a href="#">Preventive Care</a></li>
+                        <li><a href="#">Pediatric Care</a></li>
+                        <li><a href="#">Fitness & Nutrition</a></li>
+                        <li><a href="#">Cancer Support</a></li>
                     </ul>
                 </div>
                 
                 <!-- Column 4 -->
                 <div class="footer-col">
-                    <h3>Support</h3>
-                    <ul>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                        <li><a href="#">Feedback</a></li>
-                    </ul>
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Health Street, Medical City, MC 12345</p>
+                        <p><i class="fas fa-phone-alt"></i> +1 (800) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> info@globalhealthconnect.com</p>
+                    </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2023 HealthHub. All rights reserved. The information provided is for educational purposes only and is not a substitute for professional medical advice.</p>
+                <p>&copy; 2023 GlobalHealth Connect. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">HIPAA Compliance</a></p>
             </div>
         </div>
     </footer>
+    
+    <!-- Appointment Modal -->
+    <div class="modal" id="appointmentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Book Appointment</h3>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="appointmentForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="serviceType">Service Type</label>
+                            <input type="text" id="serviceType" class="form-control" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="doctorName">Doctor</label>
+                            <input type="text" id="doctorName" class="form-control" readonly>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="patientName">Full Name</label>
+                            <input type="text" id="patientName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="patientEmail">Email</label>
+                            <input type="email" id="patientEmail" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="patientPhone">Phone Number</label>
+                            <input type="tel" id="patientPhone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="patientDob">Date of Birth</label>
+                            <input type="date" id="patientDob" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="appointmentDate">Appointment Date</label>
+                            <input type="date" id="appointmentDate" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="appointmentTime">Appointment Time</label>
+                            <select id="appointmentTime" class="form-control" required>
+                                <option value="">Select Time</option>
+                                <option value="09:00 AM">09:00 AM</option>
+                                <option value="10:00 AM">10:00 AM</option>
+                                <option value="11:00 AM">11:00 AM</option>
+                                <option value="12:00 PM">12:00 PM</option>
+                                <option value="01:00 PM">01:00 PM</option>
+                                <option value="02:00 PM">02:00 PM</option>
+                                <option value="03:00 PM">03:00 PM</option>
+                                <option value="04:00 PM">04:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="healthConcerns">Health Concerns</label>
+                        <textarea id="healthConcerns" class="form-control" rows="4" required></textarea>
+                    </div>
+                    
+                    <h4>Payment Method</h4>
+                    <div class="payment-methods">
+                        <div class="payment-method">
+                            <input type="radio" name="paymentMethod" id="creditCard" value="creditCard" checked>
+                            <label for="creditCard">
+                                <i class="fab fa-cc-visa"></i>
+                                Credit/Debit Card
+                            </label>
+                        </div>
+                        <div class="payment-method">
+                            <input type="radio" name="paymentMethod" id="paypal" value="paypal">
+                            <label for="paypal">
+                                <i class="fab fa-paypal"></i>
+                                PayPal
+                            </label>
+                        </div>
+                        <div class="payment-method">
+                            <input type="radio" name="paymentMethod" id="stripe" value="stripe">
+                            <label for="stripe">
+                                <i class="fab fa-cc-stripe"></i>
+                                Stripe
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input type="checkbox" id="termsAgree" class="form-check-input" required>
+                            <label for="termsAgree" class="form-check-label">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelBooking">Cancel</button>
+                <button class="btn btn-primary" id="confirmBooking">Confirm Booking ($99.00)</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Payment Processing Modal -->
+    <div class="modal" id="paymentModal">
+        <div class="modal-content" style="max-width: 500px;">
+            <div class="modal-header">
+                <h3>Processing Payment</h3>
+            </div>
+            <div class="modal-body" style="text-align: center;">
+                <div id="paymentProcessing" style="margin: 30px 0;">
+                    <i class="fas fa-spinner fa-spin" style="font-size: 3rem; color: var(--primary); margin-bottom: 20px;"></i>
+                    <p>Please wait while we process your payment...</p>
+                </div>
+                <div id="paymentSuccess" style="display: none; margin: 30px 0;">
+                    <i class="fas fa-check-circle" style="font-size: 3rem; color: var(--success); margin-bottom: 20px;"></i>
+                    <h4>Payment Successful!</h4>
+                    <p>Your appointment has been confirmed. A confirmation has been sent to your email.</p>
+                    <p>Your appointment ID: <strong id="appointmentId">GH123456</strong></p>
+                </div>
+                <div id="paymentError" style="display: none; margin: 30px 0;">
+                    <i class="fas fa-times-circle" style="font-size: 3rem; color: var(--danger); margin-bottom: 20px;"></i>
+                    <h4>Payment Failed</h4>
+                    <p id="errorMessage">There was an issue processing your payment. Please try again.</p>
+                </div>
+            </div>
+            <div class="modal-footer" id="paymentModalFooter" style="display: none;">
+                <button class="btn btn-primary" id="closePaymentModal">Done</button>
+            </div>
+        </div>
+    </div>
     
     <script>
         // Mobile Menu Toggle
@@ -903,6 +1471,137 @@
                 '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
         
+        // Doctor Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const doctorCards = document.querySelectorAll('.doctor-card');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const country = btn.dataset.country;
+                
+                // Filter doctors
+                doctorCards.forEach(card => {
+                    if (country === 'all' || card.dataset.country === country) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Appointment Modal
+        const bookBtns = document.querySelectorAll('.book-btn');
+        const appointmentModal = document.getElementById('appointmentModal');
+        const closeModal = document.getElementById('closeModal');
+        const cancelBooking = document.getElementById('cancelBooking');
+        const serviceType = document.getElementById('serviceType');
+        const doctorName = document.getElementById('doctorName');
+        
+        bookBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                if (btn.dataset.service) {
+                    serviceType.value = btn.dataset.service;
+                    doctorName.value = 'Any available doctor';
+                } else if (btn.dataset.doctor) {
+                    doctorName.value = btn.dataset.doctor;
+                    serviceType.value = 'General Consultation';
+                }
+                
+                appointmentModal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        // Close modal functions
+        function closeAppointmentModal() {
+            appointmentModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        closeModal.addEventListener('click', closeAppointmentModal);
+        cancelBooking.addEventListener('click', closeAppointmentModal);
+        
+        window.addEventListener('click', (e) => {
+            if (e.target === appointmentModal) {
+                closeAppointmentModal();
+            }
+        });
+        
+        // Payment Processing
+        const confirmBooking = document.getElementById('confirmBooking');
+        const paymentModal = document.getElementById('paymentModal');
+        const paymentProcessing = document.getElementById('paymentProcessing');
+        const paymentSuccess = document.getElementById('paymentSuccess');
+        const paymentError = document.getElementById('paymentError');
+        const paymentModalFooter = document.getElementById('paymentModalFooter');
+        const closePaymentModal = document.getElementById('closePaymentModal');
+        
+        confirmBooking.addEventListener('click', () => {
+            // Validate form
+            const form = document.getElementById('appointmentForm');
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+            
+            // Show payment modal
+            appointmentModal.style.display = 'none';
+            paymentModal.style.display = 'block';
+            paymentProcessing.style.display = 'block';
+            paymentSuccess.style.display = 'none';
+            paymentError.style.display = 'none';
+            paymentModalFooter.style.display = 'none';
+            
+            // Simulate payment processing
+            setTimeout(() => {
+                paymentProcessing.style.display = 'none';
+                
+                // For demo purposes, we'll randomly show success or error
+                if (Math.random() > 0.2) { // 80% success rate for demo
+                    paymentSuccess.style.display = 'block';
+                    // Generate random appointment ID
+                    document.getElementById('appointmentId').textContent = 'GH' + Math.floor(100000 + Math.random() * 900000);
+                } else {
+                    paymentError.style.display = 'block';
+                    document.getElementById('errorMessage').textContent = 
+                        Math.random() > 0.5 ? 
+                        'There was an issue processing your payment. Please try again.' : 
+                        'Your card was declined. Please use a different payment method.';
+                }
+                
+                paymentModalFooter.style.display = 'flex';
+            }, 3000);
+        });
+        
+        closePaymentModal.addEventListener('click', () => {
+            paymentModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            
+            // Reset form after successful payment
+            if (paymentSuccess.style.display === 'block') {
+                document.getElementById('appointmentForm').reset();
+            }
+        });
+        
+        // Newsletter Form
+        const newsletterForm = document.getElementById('newsletterForm');
+        
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = newsletterForm.querySelector('input').value;
+            
+            // Here you would typically send the email to your server
+            alert(`Thank you for subscribing with ${email}! You'll receive our health newsletter soon.`);
+            newsletterForm.reset();
+        });
+        
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -910,21 +1609,133 @@
                 
                 if(this.getAttribute('href') === '#') return;
                 
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (mainNav.classList.contains('active')) {
+                        mainNav.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
             });
         });
+    </script>
+    
+    <!-- Backend Integration Script -->
+    <script>
+        // This would be replaced with actual backend API calls in production
         
-        // Placeholder for AdSense code
-        // You would replace this with actual AdSense code from Google
-        // (function() {
-        //     var adScript = document.createElement('script');
-        //     adScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX';
-        //     adScript.async = true;
-        //     adScript.crossOrigin = 'anonymous';
-        //     document.head.appendChild(adScript);
-        // })();
+        // Example function to get available appointment times
+        async function getAvailableTimes(doctorId, date) {
+            // In a real implementation, this would call your backend API
+            // return fetch(`/api/doctors/${doctorId}/availability?date=${date}`)
+            //     .then(response => response.json());
+            
+            // Mock response for demo
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    const times = [
+                        '09:00 AM', '10:00 AM', '11:00 AM', 
+                        '12:00 PM', '01:00 PM', '02:00 PM'
+                    ];
+                    // Randomly remove some times to simulate booked slots
+                    const availableTimes = times.filter(() => Math.random() > 0.3);
+                    resolve(availableTimes);
+                }, 500);
+            });
+        }
+        
+        // Example function to book appointment
+        async function bookAppointment(appointmentData) {
+            // In a real implementation, this would call your backend API
+            // return fetch('/api/appointments', {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //     },
+            //     body: JSON.stringify(appointmentData),
+            // })
+            // .then(response => response.json());
+            
+            // Mock response for demo
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve({
+                        success: true,
+                        appointmentId: 'GH' + Math.floor(100000 + Math.random() * 900000),
+                        doctor: appointmentData.doctorName || 'Dr. Smith',
+                        date: appointmentData.appointmentDate,
+                        time: appointmentData.appointmentTime
+                    });
+                }, 1000);
+            });
+        }
+        
+        // Example function to process payment
+        async function processPayment(paymentData) {
+            // In a real implementation, this would call your payment processor API
+            // (Stripe, PayPal, etc.) via your backend
+            
+            // Mock response for demo
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (Math.random() > 0.2) { // 80% success rate for demo
+                        resolve({
+                            success: true,
+                            transactionId: 'TXN' + Math.floor(100000000 + Math.random() * 900000000)
+                        });
+                    } else {
+                        reject({
+                            success: false,
+                            error: Math.random() > 0.5 ? 
+                                'Payment failed: Insufficient funds' : 
+                                'Payment failed: Card declined'
+                        });
+                    }
+                }, 1500);
+            });
+        }
+        
+        // Initialize date picker with disabled past dates
+        document.getElementById('appointmentDate').min = new Date().toISOString().split('T')[0];
+        
+        // In a real implementation, you would also:
+        // 1. Set up user authentication
+        // 2. Implement doctor dashboard
+        // 3. Set up admin panel
+        // 4. Integrate with calendar systems
+        // 5. Implement notification system (email/SMS)
+        // 6. Set up database for appointments, users, doctors, etc.
+    </script>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MedicalOrganization",
+        "name": "GlobalHealth Connect",
+        "description": "Online healthcare platform connecting patients with doctors worldwide for telemedicine consultations.",
+        "url": "https://www.globalhealthconnect.com",
+        "logo": "https://www.globalhealthconnect.com/images/logo.png",
+        "sameAs": [
+            "https://www.facebook.com/globalhealthconnect",
+            "https://www.twitter.com/globalhealthconnect",
+            "https://www.instagram.com/globalhealthconnect"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Health Street",
+            "addressLocality": "Medical City",
+            "addressRegion": "MC",
+            "postalCode": "12345",
+            "addressCountry": "US"
+        },
+        "telephone": "+18001234567"
+    }
     </script>
 </body>
 </html>
